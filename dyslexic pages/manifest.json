@@ -1,0 +1,19 @@
+{
+    "name": "Dyslexic Pages",
+    "description": "Displays Web Pages in a Dyslexic Friendly Font",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "icons": {
+        "16": "img/icon-16.png",
+        "32": "img/icon-32.png",
+        "48": "img/icon-48.png",
+        "128": "img/icon-128.png"
+    },
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "img/icon.png"
+    },
+    "permissions": [
+        "storage"
+    ]
+}

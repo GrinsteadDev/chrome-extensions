@@ -1,0 +1,120 @@
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: rgb(17, 27, 31);
+        --font-color: rgb(238, 250, 255);
+        --background-color2: rgb(23, 57, 71);
+        --background-color3: var(--background-color);
+        --background-color4: rgb(59, 92, 106);
+        --slider-background-color: rgb(80, 203, 255);
+        --slider-background-color2: rgb(185, 230, 249);
+        --slider-color: rgb(17, 27, 31);
+        --slider-color2: rgb(50, 55, 56);
+        --scrollbar-color: rgb(59, 92, 106) rgb(17, 27, 31);
+        
+    }
+}
+@media (prefers-color-scheme: light) {
+    :root {
+        --background-color: rgb(238, 250, 255);
+        --font-color: rgb(29, 48, 55);
+    }
+}
+:root {
+    --scrollbar-width: thin;
+    --current-font: "OpenDyslexic";
+}
+* {
+    font-family: var(--current-font);
+}
+html {
+    background-color: var(--background-color);
+    color: var(--font-color);
+    width: 350px;
+    padding: 5px 2.5px 5px 2.5px;
+}
+.header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.header-logo {
+    height: 32px;
+    width: auto;
+}
+.preview-area {
+    height: fit-content;
+    padding: 2.5px 8px 2.5px 8px;
+    background-color: white;
+}
+.preview-area .input {
+    width: 100%;
+}
+.body {
+    height: 400px;
+    overflow-y:auto;
+    background-color: var(--background-color2);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 115px;
+    padding: 8px;
+    scrollbar-color: var(--scrollbar-color);
+    scrollbar-width: var(--scrollbar-width);
+}
+.font-card {
+    border-radius: 30px;
+    height: 80px;
+    padding: 15px;
+}
+.font-card:nth-child(odd) {
+    background-color: var(--background-color3);
+}
+.font-card:nth-child(even) {
+    background-color: var(--background-color4);
+}
+
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 3em;
+    height: 1.5em;
+}
+.toggle input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.toggle .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--slider-background-color2);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 3em;
+}
+.toggle .slider:before {
+    position: absolute;
+    content: "";
+    height: 90%;
+    width: 40%;
+    left: 5%;
+    bottom: 5%;
+    background-color: var(--slider-color2);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+.toggle input[type="checkbox"]:checked + .slider {
+    background-color: var(--slider-background-color);
+}
+.toggle input[type="checkbox"]:focus + .slider {
+    box-shadow: 0 0 1px var(--slider-color);
+}
+.toggle input[type="checkbox"]:checked + .slider:before {
+    -webkit-transform: translateX(126%);
+    -ms-transform: translateX(126%);
+    transform: translateX(126%);
+    background-color: var(--slider-color);
+}
