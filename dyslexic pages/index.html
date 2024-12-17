@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/css/open-dyslexic.css">
         <link rel="stylesheet" href="/css/index.css">
         <script src="/js/load-fonts.js"></script>
         <script src="/js/index.js" defer></script>
@@ -16,38 +15,19 @@
             <input class="input" id="preview" type="text" placeholder="Preview Font" value=""></input>
         </div>
         <div class="body">
-            <div class="font-card">
-                <p><span class="name">OpenDsylexic</span> <span class="author"></span></p>
-                <p class="display"></p>
-                <label class="toggle">
-                    <input type="checkbox" checked>
-                    <span class="slider"></span>
-                </label>
-            </div>
-            <div class="font-card">
-                <p><span class="name">OpenDsylexic</span> <span class="author"></span></p>
-                <p class="display"></p>
-                <label class="toggle">
-                    <input type="checkbox" checked>
-                    <span class="slider"></span>
-                </label>
-            </div>
-            <div class="font-card">
-                <p><span class="name">OpenDsylexic</span> <span class="author"></span></p>
-                <p class="display"></p>
-                <label class="toggle">
-                    <input type="checkbox" checked>
-                    <span class="slider"></span>
-                </label>
-            </div>
-            <div class="font-card">
-                <p><span class="name">OpenDsylexic</span> <span class="author"></span></p>
-                <p class="display"></p>
-                <label class="toggle">
-                    <input type="checkbox" checked>
-                    <span class="slider"></span>
-                </label>
-            </div>
         </div>
+        <template id="font-card">
+            <div class="font-card">
+                <p><span class="name"></span> <a class="author"></a></p>
+                <p class="display"></p>
+                <div>
+                    Enable:&nbsp;&nbsp;
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </template>
     </body>
 </html>

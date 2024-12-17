@@ -1,7 +1,7 @@
 {
-    "fonts": [
+    "font-faces": [
         {
-            "name": "OpenDyslexic Regular",
+            "name": "Open Dyslexic Regular",
             "author": {
                 "name": "Abbie Gonzalez",
                 "link": "https://opendyslexic.org/"
@@ -28,7 +28,7 @@
             "weight": "normal"
         },
         {
-            "name": "OpenDyslexic Bold",
+            "name": "Open Dyslexic Bold",
             "author": {
                 "name": "Abbie Gonzalez",
                 "link": "https://opendyslexic.org/"
@@ -55,7 +55,7 @@
             "weight": "bold"
         },
         {
-            "name": "OpenDyslexic Regular Italic",
+            "name": "Open Dyslexic Regular Italic",
             "author": {
                 "name": "Abbie Gonzalez",
                 "link": "https://opendyslexic.org/"
@@ -82,7 +82,7 @@
             "weight": "normal"
         },
         {
-            "name": "OpenDyslexic Bold Italic",
+            "name": "Open Dyslexic Bold Italic",
             "author": {
                 "name": "Abbie Gonzalez",
                 "link": "https://opendyslexic.org/"
@@ -107,6 +107,22 @@
             ],
             "style": "italic",
             "weight": "bold"
+        }
+    ],
+    "supported-fonts": [
+        {
+            "name": "Open Dyslexic",
+            "author": {
+                "name": "Abbie Gonzalez",
+                "link": "https://opendyslexic.org/"
+            }
+        },
+        {
+            "name": "Arial",
+            "author" : {
+                "name": "",
+                "link": ""
+            }
         }
     ]
 }

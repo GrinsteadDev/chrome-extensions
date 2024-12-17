@@ -5,7 +5,7 @@ async function fetchFonts()
 
     console.log(data);
 
-    data['fonts'].forEach((fontInfo, index) => {
+    data['font-faces'].forEach((fontInfo, index) => {
         loadFont(fontInfo);
     });
 
@@ -40,4 +40,8 @@ async function loadFont(fontInfo)
     });
 }
 
-fetchFonts();
+if (!("DyslexicPages" in window))
+{
+    window.DyslexicPages = {};
+}
+window.DyslexicPages.fonts = fetchFonts();
