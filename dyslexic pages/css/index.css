@@ -10,26 +10,33 @@
         --slider-color: rgb(17, 27, 31);
         --slider-color2: rgb(50, 55, 56);
         --scrollbar-color: rgb(59, 92, 106) rgb(17, 27, 31);
-        
     }
 }
 @media (prefers-color-scheme: light) {
     :root {
         --background-color: rgb(238, 250, 255);
         --font-color: rgb(29, 48, 55);
+        --background-color2: rgb(206 240 255);
+        --background-color3: var(--background-color);
+        --background-color4: rgb(121 215 255);
+        --slider-background-color: rgb(0 59 82);
+        --slider-background-color2: rgb(163 163 163);
+        --slider-color: rgb(246 252 255);
+        --slider-color2: rgb(50, 55, 56);
+        --scrollbar-color: rgb(0 59 82) rgb(246 252 255);
     }
 }
 :root {
     --scrollbar-width: thin;
-    --current-font: "OpenDyslexic";
+    --current-font: "Open Dyslexic";
 }
 html {
-    background-color: var(--background-color);
-    color: var(--font-color);
     width: 350px;
     padding: 5px 2.5px 5px 2.5px;
 }
 body {
+    background-color: var(--background-color);
+    color: var(--font-color);
     font-family: var(--current-font);
 }
 .header {
@@ -83,7 +90,7 @@ body {
     width: 3em;
     height: 1.5em;
 }
-.toggle input[type="checkbox"] {
+.toggle input[type="radio"] {
     opacity: 0;
     width: 0;
     height: 0;
@@ -112,13 +119,13 @@ body {
     transition: .4s;
     border-radius: 50%;
 }
-.toggle input[type="checkbox"]:checked + .slider {
+.toggle input[type="radio"]:checked + .slider {
     background-color: var(--slider-background-color);
 }
-.toggle input[type="checkbox"]:focus + .slider {
+.toggle input[type="radio"]:focus + .slider {
     box-shadow: 0 0 1px var(--slider-color);
 }
-.toggle input[type="checkbox"]:checked + .slider:before {
+.toggle input[type="radio"]:checked + .slider:before {
     -webkit-transform: translateX(126%);
     -ms-transform: translateX(126%);
     transform: translateX(126%);
