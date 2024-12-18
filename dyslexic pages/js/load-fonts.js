@@ -1,6 +1,7 @@
 async function fetchFonts()
 {
-    const req = await fetch('/fonts/fonts.json');
+    const url = chrome.runtime.getURL('/fonts/fonts.json');
+    const req = await fetch(url);
     const data = await req.json();
 
     console.log(data);
@@ -40,8 +41,43 @@ async function loadFont(fontInfo)
     });
 }
 
+function getCurrentFont() {
+    return new Promise((resolve, reject) => {
+        chrome.storage.sync.get(
+            ['current-font'],
+            (result) => {
+                if (chrome.runtime.lastError) {
+                    console.error(chrome.runtime.lastError.message);
+                    reject(chrome.runtime.lastError.message);
+                } else {
+                    resolve(result['current-font']);
+                }
+            }
+        );
+    });
+}
+
+function setCurrentFont(font) {
+    return new Promise((resolve, reject) => {
+        chrome.storage.sync.set(
+            {'current-font': font},
+            () => {
+                if (chrome.runtime.lastError) {
+                    console.error(chrome.runtime.lastError.message);
+                    reject(chrome.runtime.lastError.message);
+                } else {
+                    document.querySelector(':root').style.setProperty('--current-font', font['name']);
+
+                    resolve(font);
+                }
+            }
+        );
+    });
+}
+
 if (!("DyslexicPages" in window))
 {
     window.DyslexicPages = {};
 }
+
 window.DyslexicPages.fonts = fetchFonts();

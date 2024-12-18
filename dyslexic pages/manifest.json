@@ -10,7 +10,7 @@
         "128": "img/icon-128.png"
     },
     "action": {
-        "default_popup": "index.html",
+        "default_popup": "html/action-page.html",
         "default_icon": "img/icon.png"
     },
     "permissions": [

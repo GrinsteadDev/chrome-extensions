@@ -1,37 +1,3 @@
-function getCurrentFont() {
-    return new Promise((resolve, reject) => {
-        chrome.storage.sync.get(
-            ['current-font'],
-            (result) => {
-                if (chrome.runtime.lastError) {
-                    console.error(chrome.runtime.lastError.message);
-                    reject(chrome.runtime.lastError.message);
-                } else {
-                    resolve(result['current-font']);
-                }
-            }
-        );
-    });
-}
-
-function setCurrentFont(font) {
-    return new Promise((resolve, reject) => {
-        chrome.storage.sync.set(
-            {'current-font': font},
-            () => {
-                if (chrome.runtime.lastError) {
-                    console.error(chrome.runtime.lastError.message);
-                    reject(chrome.runtime.lastError.message);
-                } else {
-                    document.querySelector(':root').style.setProperty('--current-font', font['name']);
-
-                    resolve(font);
-                }
-            }
-        );
-    });
-}
-
 window.DyslexicPages.fonts.then((fontData) => {
     const defaultText = "AaBbCcDdEeFfGg";
     const fontCardTemp = document.querySelector('template#font-card');
@@ -74,6 +40,3 @@ window.DyslexicPages.fonts.then((fontData) => {
         });
     });
 });
-
-
-
