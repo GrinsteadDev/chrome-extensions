@@ -12,7 +12,7 @@ async function fetchFonts()
 
     return data;
 }
-async function loadFont(fontInfo)
+function loadFont(fontInfo)
 {
     var src = [];
 
@@ -41,7 +41,8 @@ async function loadFont(fontInfo)
     });
 }
 
-function getCurrentFont() {
+function getCurrentFont()
+{
     return new Promise((resolve, reject) => {
         chrome.storage.sync.get(
             ['current-font'],
@@ -57,7 +58,8 @@ function getCurrentFont() {
     });
 }
 
-function setCurrentFont(font) {
+function setCurrentFont(font)
+{
     return new Promise((resolve, reject) => {
         chrome.storage.sync.set(
             {'current-font': font},
@@ -75,9 +77,21 @@ function setCurrentFont(font) {
     });
 }
 
-if (!("DyslexicPages" in window))
+function fetchSystemFonts()
 {
-    window.DyslexicPages = {};
-}
+    return chrome.fontSettings.getFontList().then((data) => {
+        let fonts = [];
 
-window.DyslexicPages.fonts = fetchFonts();
+        data.forEach((font) => {
+            let f = {};
+            f.name = font.displayName;
+            f.author = {};
+            f.author.name = "";
+            f.author.link = "";
+
+            fonts.push(f);
+        });
+
+        return fonts;
+    });
+}

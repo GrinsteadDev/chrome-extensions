@@ -1,4 +1,4 @@
-window.DyslexicPages.fonts.then((fontData) => {
+fetchFonts().then((fontData) => {
     const defaultText = "AaBbCcDdEeFfGg";
     const fontCardTemp = document.querySelector('template#font-card');
     const dBody = document.querySelector('.body');
