@@ -1,4 +1,72 @@
 <!DOCTYPE html>
 <html>
-    
+    <head>
+        <title>Dyslexic Pages - Displays Web Pages in a Dyslexic Friendly Font</title>
+        <link rel="stylesheet" href="/css/theme.css">
+        <link rel="stylesheet" href="/css/toggle.css">
+        <link rel="stylesheet" href="/css/options-page.css">
+        <script src="/js/window-storage.js"></script>
+        <script src="/js/templates.js"></script>
+        <script src="/js/load-fonts.js"></script>
+        <script src="/js/options-page.js" defer></script>
+    </head>
+    <body>
+        <div class="body">
+            <div class="left-panel">
+                <div class="header">
+                    <h1><img class="header-logo" src="/img/icon.png" alt="Dyslexic Pages Icon"> Dyslexic Pages</h1>
+                </div>
+                <div class="menu">
+                    <label class="menu-option">
+                        <input type="radio" name="menu-group">
+                        <span><p>Fonts</p></span>
+                    </label>
+                    <label class="menu-option">
+                        <input type="radio" name="menu-group">
+                        <span><p>General</p></span>
+                    </label>
+                    <label class="menu-option">
+                        <input type="radio" name="menu-group">
+                        <span><p>About</p></span>
+                    </label>
+                    <label class="menu-option">
+                        <input type="radio" name="menu-group">
+                        <span><p>Support</p></span>
+                    </label>
+                </div>
+            </div>
+            <div class="right-panel">
+                <div class="menu-page">
+                    <div class="fonts-page">
+                        <h1>Dyslexic Pages Fonts</h1>
+                        <label class="tile-option">
+                            <input type="radio" name="tile-option">
+                        </label>
+                        <label class="tile-option">
+                            <input type="radio" name="tile-option">
+                        </label>
+                        <div id="app-fonts" class="font-tiles">
+                            <h2 class="title">Application Fonts</h2>
+                            
+                        </div>
+                        <div class="font-tiles">
+                            <h2 class="title">System Fonts</h2>
+                            <input type="button" value="Load System Fonts">
+                            <div class="font-tile">
+                                <p><span class="name">Arial</span> <a class="author" target="_blank"></a></p>
+                                <div>
+                                    Enable:&nbsp;&nbsp;
+                                    <label class="toggle">
+                                        <input name="font-toggle" type="radio">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <p class="display"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

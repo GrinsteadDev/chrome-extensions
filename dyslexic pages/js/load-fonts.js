@@ -3,13 +3,17 @@ async function fetchFonts()
     const url = chrome.runtime.getURL('/fonts/fonts.json');
     const req = await fetch(url);
     const data = await req.json();
-
-    console.log(data);
-
+    
     data['font-faces'].forEach((fontInfo, index) => {
         loadFont(fontInfo);
     });
-
+    data['supported-fonts'].forEach((fontInfo, index) => {
+        if (!(fontInfo['name'] in window.DyslexicPages.fonts.appFonts))
+        {
+            window.DyslexicPages.fonts.appFonts[fontInfo['name']] = fontInfo;
+        }
+    });
+    
     return data;
 }
 function loadFont(fontInfo)
@@ -38,6 +42,32 @@ function loadFont(fontInfo)
         document.fonts.add(f);
 
         return f;
+    });
+}
+
+function fetchSystemFonts()
+{
+    return chrome.fontSettings.getFontList().then((data) => {
+        let fonts = [];
+
+        data.forEach((font) => {
+            let fontInfo = {
+                name: font.displayName,
+                author: {
+                    name: '',
+                    link: ''
+                }
+            };
+
+            fonts.push(fontInfo);
+
+            if (!(fontInfo.name in window.DyslexicPages.fonts.sysFonts))
+            {
+                window.DyslexicPages.fonts.sysFonts[fontInfo.name] = fontInfo;
+            }
+        });
+
+        return fonts;
     });
 }
 
@@ -77,21 +107,35 @@ function setCurrentFont(font)
     });
 }
 
-function fetchSystemFonts()
+function getFontMetric(font, size)
 {
-    return chrome.fontSettings.getFontList().then((data) => {
-        let fonts = [];
+    const cId = 'font-metric-canvas';
+    const lwText = 'q';
+    const upText = 'Q';
+    if (document.getElementById(cId) == null)
+    {
+        let c = document.createElement('canvas');
+            c.id = cId;
+            c.style.display = 'none';
+        
+        document.body.appendChild(c);
+    }
+    const ctx = document.getElementById(cId).getContext('2d');
+          ctx.font = size + ' ' + font.name;
+    
+    let lwMetric = ctx.measureText(lwText);
+    let upMetric = ctx.measureText(upText);
 
-        data.forEach((font) => {
-            let f = {};
-            f.name = font.displayName;
-            f.author = {};
-            f.author.name = "";
-            f.author.link = "";
-
-            fonts.push(f);
-        });
-
-        return fonts;
-    });
+    return {
+        capital: {
+            ascent: upMetric.fontBoundingBoxAscent,
+            descent: upMetric.fontBoundingBoxDescent
+        },
+        lower: {
+            ascent: lwMetric.actualBoundingBoxAscent,
+            descent: lwMetric.fontBoundingBoxDescent
+        },
+        baseline: upMetric.hangingBaseline,
+        em: upMetric.fontBoundingBoxAscent + upMetric.fontBoundingBoxDescent
+    };
 }

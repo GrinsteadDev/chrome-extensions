@@ -1,0 +1,47 @@
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 3em;
+    height: 1.5em;
+}
+.toggle input[type="radio"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.toggle .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--slider-background-color2);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 3em;
+}
+.toggle .slider:before {
+    position: absolute;
+    content: "";
+    height: 90%;
+    width: 40%;
+    left: 5%;
+    bottom: 5%;
+    background-color: var(--slider-color2);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+.toggle input[type="radio"]:checked + .slider {
+    background-color: var(--slider-background-color);
+}
+.toggle input[type="radio"]:focus + .slider {
+    box-shadow: 0 0 1px var(--slider-color);
+}
+.toggle input[type="radio"]:checked + .slider:before {
+    -webkit-transform: translateX(126%);
+    -ms-transform: translateX(126%);
+    transform: translateX(126%);
+    background-color: var(--slider-color);
+}
