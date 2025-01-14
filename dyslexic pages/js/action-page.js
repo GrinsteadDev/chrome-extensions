@@ -27,7 +27,7 @@ document.querySelector('img#options-page').addEventListener(
     fontData['supported-fonts'].forEach((font, index) => {
         let cpy = fontCardTemp.content.cloneNode(true);
 
-        cpy.querySelector('.font-card').style.setProperty('font-family', font['name'], 'important');
+        cpy.querySelector('.display').style.setProperty('font-family', font['name'], 'important');
         cpy.querySelector('.name').innerText = font['name'];
         cpy.querySelector('.author').href = font['author']['link'];
         cpy.querySelector('.author').innerText = font['author']['name'];

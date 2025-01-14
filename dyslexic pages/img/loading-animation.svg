@@ -1,0 +1,78 @@
+<svg 
+width="700" 
+height="500" 
+viewBox="0 0 700 500"
+xmlns="http://www.w3.org/2000/svg" 
+xmlns:xlink="http://www.w3.org/1999/xlink">
+    <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="/css/theme.css" type="text/css" />
+    <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="/css/loading-animation.css" type="text/css" />
+    <defs>
+        <radialGradient id="rg1">
+            <stop id="st1" offset="0%"/>
+            <stop id="st2" offset="100%"/>
+        </radialGradient>
+    </defs>
+    <circle cx="50" cy="250" r="35" >
+        <animate 
+            attributeName="cy"
+            begin="0s;"
+            dur="2.5s"
+            values="250;100;255;200;275;225;250"
+            keyTime="0;0.95;0.96;0.97;0.98;0.99;1"
+            repeatCount="indefinite" />
+    </circle>
+    <circle cx="150" cy="250" r="35" >
+        <animate
+            attributeName="cy"
+            begin="0.10s"
+            dur="2.5s"
+            values="250;100;255;200;275;225;250"
+            keyTime="0;0.95;0.96;0.97;0.98;0.99;1"
+            repeatCount="indefinite" />
+    </circle>
+    <circle cx="250" cy="250" r="35" >
+        <animate
+            attributeName="cy"
+            begin="0.20s"
+            dur="2.5s"
+            values="250;100;255;200;275;225;250"
+            keyTime="0;0.95;0.96;0.97;0.98;0.99;1"
+            repeatCount="indefinite" />
+    </circle>
+    <circle cx="350" cy="250" r="35" >
+        <animate
+            attributeName="cy"
+            begin="0.30s"
+            dur="2.5s"
+            values="250;100;255;200;275;225;250"
+            keyTime="0;0.95;0.96;0.97;0.98;0.99;1"
+            repeatCount="indefinite" />
+    </circle>
+    <circle cx="450" cy="250" r="35" >
+        <animate
+            attributeName="cy"
+            begin="0.40s"
+            dur="2.5s"
+            values="250;100;255;200;275;225;250"
+            keyTime="0;0.95;0.96;0.97;0.98;0.99;1"
+            repeatCount="indefinite" />
+    </circle>
+    <circle cx="550" cy="250" r="35" >
+        <animate
+            attributeName="cy"
+            begin="0.50s"
+            dur="2.5s"
+            values="250;100;255;200;275;225;250"
+            keyTime="0;0.95;0.96;0.97;0.98;0.99;1"
+            repeatCount="indefinite" />
+    </circle>
+    <circle cx="650" cy="250" r="35" >
+        <animate
+            attributeName="cy"
+            begin="0.60s"
+            dur="2.5s"
+            values="250;100;255;200;275;225;250"
+            keyTime="0;0.95;0.96;0.97;0.98;0.99;1"
+            repeatCount="indefinite" />
+    </circle>
+</svg>

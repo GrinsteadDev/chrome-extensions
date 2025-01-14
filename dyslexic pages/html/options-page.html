@@ -5,10 +5,12 @@
         <link rel="stylesheet" href="/css/theme.css">
         <link rel="stylesheet" href="/css/toggle.css">
         <link rel="stylesheet" href="/css/options-page.css">
+        <link rel="stylesheet" href="/css/fonts-page.css">
         <script src="/js/window-storage.js"></script>
         <script src="/js/templates.js"></script>
         <script src="/js/load-fonts.js"></script>
         <script src="/js/options-page.js" defer></script>
+        <script src="/js/fonts-page.js" defer></script>
     </head>
     <body>
         <div class="body">
@@ -37,31 +39,35 @@
             </div>
             <div class="right-panel">
                 <div class="menu-page">
-                    <div class="fonts-page">
-                        <h1>Dyslexic Pages Fonts</h1>
-                        <label class="tile-option">
-                            <input type="radio" name="tile-option">
-                        </label>
-                        <label class="tile-option">
-                            <input type="radio" name="tile-option">
-                        </label>
-                        <div id="app-fonts" class="font-tiles">
-                            <h2 class="title">Application Fonts</h2>
-                            
+                    <div id="fonts-page">
+                        <div class="header">
+                            <h1 class="title">Dyslexic Pages Fonts</h1>
+                            <div class="tile-options">
+                                <label class="tile-option">
+                                    <object class="tile-option-icon" data="/img/grid-icon.svg"></object>
+                                    <input id="tile-option-grid" type="radio" name="tile-option">
+                                    <span></span>
+                                </label>
+                                <label class="tile-option">
+                                    <object class="tile-option-icon" data="/img/row-icon.svg"></object>
+                                    <input id="tile-option-row" type="radio" name="tile-option" checked>
+                                    <span></span>
+                                </label>
+                            </div>
                         </div>
-                        <div class="font-tiles">
-                            <h2 class="title">System Fonts</h2>
-                            <input type="button" value="Load System Fonts">
-                            <div class="font-tile">
-                                <p><span class="name">Arial</span> <a class="author" target="_blank"></a></p>
-                                <div>
-                                    Enable:&nbsp;&nbsp;
-                                    <label class="toggle">
-                                        <input name="font-toggle" type="radio">
-                                        <span class="slider"></span>
-                                    </label>
+                        <div class="controls">
+
+                        </div>
+                        <div class="content">
+                            <div id="app-fonts" class="font-tiles">
+                                <h2 class="title">Application Fonts</h2>
+                            </div>
+                            <div id="sys-fonts" class="font-tiles">
+                                <h2 class="title">System Fonts</h2>
+                                <div class="center-content" id="load-sys-fonts-container">
+                                    <input id="load-sys-fonts" type="button" value="Load System Fonts">
+                                    <object id="loading-sys-fonts-icon" data="/img/loading-animation.svg"></object>
                                 </div>
-                                <p class="display"></p>
                             </div>
                         </div>
                     </div>

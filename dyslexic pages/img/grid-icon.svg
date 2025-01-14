@@ -1,0 +1,22 @@
+<svg 
+width="700" 
+height="500" 
+viewBox="0 0 700 500"
+xmlns="http://www.w3.org/2000/svg" 
+xmlns:xlink="http://www.w3.org/1999/xlink">
+    <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="/css/theme.css" type="text/css" />
+    <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="/css/grid-icon.css" type="text/css" />
+    <rect class="grid-icon-background" width="650" height="475" rx="25" x="25" y="25"/>
+    <rect class="grid-icon-foreground" width="125" height="125" rx="25" x="50" y="50"/>
+    <rect class="grid-icon-foreground" width="125" height="125" rx="25" x="50" y="200"/>
+    <rect class="grid-icon-foreground" width="125" height="125" rx="25" x="50" y="350"/>
+    <rect class="grid-icon-foreground" width="125" height="125" rx="25" x="212" y="50"/>
+    <rect class="grid-icon-foreground" width="125" height="125" rx="25" x="212" y="200"/>
+    <rect class="grid-icon-foreground" width="125" height="125" rx="25" x="212" y="350"/>
+    <rect class="grid-icon-foreground" width="125" height="125" rx="25" x="362" y="50"/>
+    <rect class="grid-icon-foreground" width="125" height="125" rx="25" x="362" y="200"/>
+    <rect class="grid-icon-foreground" width="125" height="125" rx="25" x="362" y="350"/>
+    <rect class="grid-icon-foreground" width="125" height="125" rx="25" x="525" y="50"/>
+    <rect class="grid-icon-foreground" width="125" height="125" rx="25" x="525" y="200"/>
+    <rect class="grid-icon-foreground" width="125" height="125" rx="25" x="525" y="350"/>
+</svg>

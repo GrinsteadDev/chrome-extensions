@@ -106,36 +106,3 @@ function setCurrentFont(font)
         );
     });
 }
-
-function getFontMetric(font, size)
-{
-    const cId = 'font-metric-canvas';
-    const lwText = 'q';
-    const upText = 'Q';
-    if (document.getElementById(cId) == null)
-    {
-        let c = document.createElement('canvas');
-            c.id = cId;
-            c.style.display = 'none';
-        
-        document.body.appendChild(c);
-    }
-    const ctx = document.getElementById(cId).getContext('2d');
-          ctx.font = size + ' ' + font.name;
-    
-    let lwMetric = ctx.measureText(lwText);
-    let upMetric = ctx.measureText(upText);
-
-    return {
-        capital: {
-            ascent: upMetric.fontBoundingBoxAscent,
-            descent: upMetric.fontBoundingBoxDescent
-        },
-        lower: {
-            ascent: lwMetric.actualBoundingBoxAscent,
-            descent: lwMetric.fontBoundingBoxDescent
-        },
-        baseline: upMetric.hangingBaseline,
-        em: upMetric.fontBoundingBoxAscent + upMetric.fontBoundingBoxDescent
-    };
-}

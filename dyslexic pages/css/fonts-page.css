@@ -1,0 +1,109 @@
+#fonts-page {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    --grid-column-count: 1;
+}
+#fonts-page > .header {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    text-align: center;
+}
+#fonts-page > .header > .title {
+    font-size: 2.5em;
+}
+.tile-options {
+    padding-left: 50px;
+    float: left;
+}
+.tile-option {
+    display: inline-block;
+    padding: 5px;
+    border-radius: 15px;
+    position: relative;
+    transition: 0.3s;
+}
+.tile-option > span {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+}
+.tile-option:hover {
+    transform: scale(1.03, 1.03);
+    background-color: var(--background-color4);
+}
+.tile-option .tile-option-icon {
+    width: 50px;
+    height: 30px;
+}
+.tile-option input[type="radio"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.tile-option:has(input[type="radio"]:checked) {
+    background-color: var(--slider-background-color);
+}
+#fonts-page > .controls {
+    grid-column: 1;
+    grid-row: 2;
+}
+#fonts-page > .content {
+    grid-column: 2;
+    grid-row: 2;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+    scrollbar-color: var(--scrollbar-color);
+    scrollbar-width: var(--scrollbar-width, auto);
+}
+#fonts-page .font-tiles {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-column-count, 1), 1fr);
+}
+#fonts-page .font-tiles .title {
+    text-align: center;
+    font-size: 2.3em;
+    grid-column: 1 / span var(--grid-column-count, 1);
+}
+.font-tile {
+    padding: 24px 24px 32px 24px;
+    transition: 0.3s;
+    border-radius: 25px;
+    position: relative;
+}
+.font-tile:hover {
+    transform: scale(1.03, 1.03);
+    background-color: var(--background-color4);
+}
+.font-tile .display {
+    font-size: 25px;
+    overflow: hidden;
+}
+#load-sys-fonts {
+    height: 100px;
+    width: 60%;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: var(--font-color);
+    background-color: var(--background-color3);
+    font-size: 2.0em;
+}
+#load-sys-fonts:hover {
+    transform: scale(1.03, 1.03);
+    background-color: var(--background-color4);
+}
+#loading-sys-fonts-icon {
+    width: 60%;
+    height: 200px;
+    display: none;
+}
+#load-sys-fonts-container {
+    grid-column: 1 / span var(--grid-column-count, 1);
+}

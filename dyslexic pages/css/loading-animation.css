@@ -1,0 +1,11 @@
+circle {
+    fill: url('#rg1');
+    stroke: var(--background-color4);
+    stroke-width: 5;
+}
+#st1 {
+    stop-color: var(--font-color);
+}
+#st2 {
+    stop-color: var(--font-color);
+}

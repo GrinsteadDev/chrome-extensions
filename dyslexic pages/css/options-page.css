@@ -81,16 +81,10 @@ body {
 }
 .menu-page {
     display: none;
+    position: relative;
+    padding: 0;
+    margin: 0;
 }
-
-.font-tiles {
-    display: grid;
-
-}
-.font-tile {
-    padding: 24px 24px 32px 24px;
-}
-.font-tile .display {
-    background-attachment: local;
-    font-size: 25px;
+.center-content {
+    text-align: center;
 }

@@ -1,0 +1,13 @@
+.row-icon-background {
+    fill: var(--font-color);
+    stroke: var(--background-color4);
+    stroke-width: 2;
+}
+.row-icon-foreground {
+    fill: var(--background-color1);
+    stroke: var(--background-color4);
+    stroke-width: 2;
+}
+svg {
+    pointer-events: none;
+}
