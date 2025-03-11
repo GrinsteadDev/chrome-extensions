@@ -56,9 +56,32 @@
                             </div>
                         </div>
                         <div class="controls">
-
+                            <label class="font-preview">
+                                <p>Preview</p>
+                                <textarea id="font-preview" maxlength="500"></textarea>
+                            </label>
+                            <label class="font-size-select">
+                                <select id="font-size-select">
+                                    <option disabled></option>
+                                    <option>8px</option>
+                                    <option>12px</option>
+                                    <option>14px</option>
+                                    <option>20px</option>
+                                    <option>24px</option>
+                                    <option selected>32px</option>
+                                    <option>40px</option>
+                                    <option>64px</option>
+                                    <option>96px</option>
+                                    <option>120px</option>
+                                    <option>184px</option>
+                                    <option>280px</option>
+                                </select>
+                            </label>
+                            <label class="font-size-slider">
+                                <input id="font-size-slider" type="range" min="8" max="300" value="32">
+                            </label>
                         </div>
-                        <div class="content">
+                        <div class="content custom-scroll-bar">
                             <div id="app-fonts" class="font-tiles">
                                 <h2 class="title">Application Fonts</h2>
                             </div>

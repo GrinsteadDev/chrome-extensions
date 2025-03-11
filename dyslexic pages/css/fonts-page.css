@@ -3,15 +3,21 @@
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
+    background-color: inherit;
     --grid-column-count: 1;
 }
 #fonts-page > .header {
     grid-column: 1 / span 2;
     grid-row: 1;
     text-align: center;
+    background-color: inherit;
 }
 #fonts-page > .header > .title {
     font-size: 2.5em;
+}
+#fonts-page .custom-scroll-bar {
+    scrollbar-color: var(--scrollbar-color);
+    scrollbar-width: var(--scrollbar-width, auto);
 }
 .tile-options {
     padding-left: 50px;
@@ -52,6 +58,8 @@
 #fonts-page > .controls {
     grid-column: 1;
     grid-row: 2;
+    padding-left: 10px;
+    background-color: inherit;
 }
 #fonts-page > .content {
     grid-column: 2;
@@ -59,8 +67,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     padding: 20px;
-    scrollbar-color: var(--scrollbar-color);
-    scrollbar-width: var(--scrollbar-width, auto);
+    background-color: inherit;
 }
 #fonts-page .font-tiles {
     display: grid;
@@ -106,4 +113,59 @@
 }
 #load-sys-fonts-container {
     grid-column: 1 / span var(--grid-column-count, 1);
+}
+.controls .font-preview {
+    display: block;
+    padding: 1.5px;
+    font-size: 20px;
+}
+.controls #font-preview {
+    font-size: 24px;
+    height: 10em;
+    border: 3px solid var(--background-color);
+    padding: 5px;
+    border-radius: 15px;
+    background-color: var(--slider-background-color2);
+}
+.controls .font-size-select {
+    background-color: inherit;
+    width: 30%;
+    margin-right: 0;
+    font-size: 20px;
+    float: left;
+}
+.controls .font-size-select .focus:focus {
+    outline: var(--font-color) solid 2.5px;
+}
+.controls .font-size-select .focus:hover {
+    background-color: var(--background-color2);
+    outline: var(--font-color) solid 2.5px;
+}
+.controls #font-size-select {
+    display: none;
+}
+.controls .font-size-slider {
+    width: 65%;
+    margin-left: 0;
+    float: right;
+}
+.controls #font-size-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 2em;
+    background: var(--slider-background-color2);
+    outline-color: var(--background-color1);
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.controls #font-size-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 2.5em;
+    width: 2.5em;
+    background: var(--slider-color2);
+    outline-color: var(--slider-background-color);
+    border-radius: 50%;
 }
